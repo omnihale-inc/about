@@ -71,8 +71,6 @@ export const textVariant = (delay: number) => ({
   },
 });
 
-
-
 export const textContainer = {
   hidden: {
     opacity: 0,
