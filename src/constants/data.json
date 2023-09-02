@@ -2,21 +2,26 @@
     "headerItems":[
         {
             "id": 1,
-            "title": "Company",
+            "title": "About",
             "href": "#"
         },
         {
             "id": 2,
-            "title": "People",
+            "title": "Company",
             "href": "#"
         },
         {
             "id": 3,
-            "title": "Values",
+            "title": "People",
             "href": "#"
         },
         {
             "id": 4,
+            "title": "Values",
+            "href": "#"
+        },
+        {
+            "id": 5,
             "title": "Product",
             "href": "#"
         }
