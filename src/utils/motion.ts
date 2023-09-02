@@ -45,7 +45,7 @@ export const navOpen = ({
   }
 })
 
-export const staggerContainer = (staggerChildren: any, delayChildren: any) => ({
+export const staggerContainer = (staggerChildren?: any, delayChildren?: any) => ({
   hidden: {},
   show: {
     transition: {
@@ -70,6 +70,8 @@ export const textVariant = (delay: number) => ({
     },
   },
 });
+
+
 
 export const textContainer = {
   hidden: {
