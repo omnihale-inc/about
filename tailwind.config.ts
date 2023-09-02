@@ -14,6 +14,10 @@ const config: Config = {
         'white-color': 'var(--white-color)',
         'read-more': 'var(--read-more)',
         'light-gray': 'var(--light-gray)'
+      },
+      backgroundImage: {
+        'hero-desk': "url('/images/homepage/hero-desk.jpg')",
+        'hero-mob': "url('/images/homepage/hero-mobile.jpg')",
       }
     },
   },
