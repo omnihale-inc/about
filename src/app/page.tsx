@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div>
+      <div className="container mx-auto px-7 lg:px-0">
         <Hero />
         <HeroMob />
         <About />
