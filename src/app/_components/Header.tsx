@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import { Caesar_Dressing } from 'next/font/google'
 import { IoMenuOutline } from 'react-icons/io5'
 import { IoMdClose } from 'react-icons/io'
@@ -16,9 +16,9 @@ const Header = () => {
   return (
     <motion.header className='w-full py-4 relative'>
       <div className='container mx-auto flex justify-between items-center px-7 lg:px-0 lg:items-end'>
-        <motion.button animate={openNav ? "open" : "closed"} className='z-10' onClick={() => toggleNav()}>
+        <motion.button animate={openNav ? "open" : "closed"} className='z-10 block lg:hidden' onClick={() => toggleNav()}>
           {openNav ?
-            <IoMdClose className="block text-black cursor-pointer lg:hidden" size={30} />
+            <IoMdClose className="text-black cursor-pointer" size={30} />
             : <IoMenuOutline className="block text-black cursor-pointer lg:hidden" size={30} />
           }
         </motion.button>
