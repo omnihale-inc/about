@@ -34,7 +34,9 @@ const Header = () => {
         <Link key={data.headerItems[data.headerItems.length - 1].id} className='text-[1.125rem] text-text-color duration-300 hover:text-gray-700 hidden lg:block' href={data.headerItems[data.headerItems.length - 1].href}>{data.headerItems[data.headerItems.length - 1].title}</Link>
         <div className='block lg:hidden' />
       </div>
-      {openNav && (<AnimatePresence><HeaderModal toggle={toggleNav} /></AnimatePresence>)}
+      <AnimatePresence>
+        {openNav && (<HeaderModal toggle={toggleNav} />)}
+      </AnimatePresence>
     </motion.header>
   )
 }
