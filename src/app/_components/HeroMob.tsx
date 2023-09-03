@@ -16,7 +16,7 @@ const HeroMob = () => {
         <motion.div
           initial="hidden"
           whileInView="show"
-          className='text-white flex flex-col text-center gap-y-3 px-9'
+          className='text-white flex flex-col text-center px-9'
         >
           <motion.h1 variants={textVariant(0.5)} className={`${raleWay.className} text-2xl font-semibold`}>{data.heroSection.title}</motion.h1>
           <motion.p variants={textVariant(0.8)} className='text-base font-light'>{data.heroSection.description}</motion.p>
