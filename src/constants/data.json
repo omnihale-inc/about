@@ -1,38 +1,69 @@
 {
-    "headerItems":[
+    "headerItems": [
         {
             "id": 1,
             "title": "About",
-            "href": "#"
+            "href": "#",
+            "subLinks": []
         },
         {
             "id": 2,
             "title": "Company",
-            "href": "#"
-        },
-        {
-            "id": 3,
-            "title": "People",
-            "href": "#"
+            "href": "#",
+            "subLinks": [
+                {
+                    "id": 6,
+                    "title": "Overview",
+                    "href": "#"
+                },
+                {
+                    "id": 7,
+                    "title": "People",
+                    "href": "#"
+                },
+                {
+                    "id": 9,
+                    "title": "Contact us",
+                    "href": "#"
+                }
+            ]
         },
         {
             "id": 4,
             "title": "Values",
-            "href": "#"
+            "href": "#",
+            "subLinks": [
+                {
+                    "id": 10,
+                    "title": "Overview",
+                    "href": "#"
+                },
+                {
+                    "id": 11,
+                    "title": "Diversity & inclusion",
+                    "href": "#"
+                },
+                {
+                    "id": 12,
+                    "title": "Innovation",
+                    "href": "#"
+                }
+            ]
         },
         {
             "id": 5,
             "title": "Product",
-            "href": "#"
+            "href": "#",
+            "subLinks": []
         }
     ],
-    "heroSection":{
+    "heroSection": {
         "title": "Techno Sentience",
         "description": "Our mission is to empower humanity's evolution through innovation, technology, and cosmic progress",
         "imageMob": "/images/homepage/hero-mobile.jpg",
         "imageDesk": "/images/homepage/hero-desk.jpg"
     },
-    "whoWeAre":{
+    "whoWeAre": {
         "header": "Who are we",
         "description": "Embracing techno-sentience, we're innovators weaving technology into human experience. Architects of ethical progress, harmonizing virtual and real, shaping a boundless future with purposeful connectivity",
         "image": "/images/homepage/who-we-are.jpg"
