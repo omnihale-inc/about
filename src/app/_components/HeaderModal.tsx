@@ -5,7 +5,7 @@ import data from '@/constants/data.json'
 import Link from 'next/link'
 import { motion, Cycle } from "framer-motion"
 import { navMenu, staggerNavigation } from '@/utils/motion'
-import NavLink from './elements/NavLink'
+import NavLinkMob from './elements/NavLinkMob'
 
 type headerModal = {
     toggle: Cycle
@@ -33,7 +33,7 @@ const HeaderModal = ({ toggle }: headerModal) => {
                 className='flex flex-1 flex-col pt-24 gap-6'>
                 {data.headerItems.slice(0, data.headerItems.length - 1).map((item) => (
                     <div key={item.id} className='overflow-hidden'>
-                        <NavLink href={item.href} title={item.title} />
+                        <NavLinkMob asSubLink={item.subLinks.length > 0} subLinks={item.subLinks} href={item.href} title={item.title} />
                     </div>
                 ))}
             </motion.div>
