@@ -8,6 +8,7 @@ import { AnimatePresence, motion, useCycle } from "framer-motion"
 import Link from 'next/link'
 import data from '@/constants/data.json'
 import HeaderModal from './HeaderModal'
+import NavLink from './elements/NavLink'
 
 const caesar = Caesar_Dressing({ subsets: ['latin'], weight: '400' })
 
@@ -28,7 +29,7 @@ const Header = () => {
         </div>
         <div className='hidden lg:flex items-center gap-11'>
           {data.headerItems.slice(0, data.headerItems.length - 1).map((item) => (
-            <Link key={item.id} className='text-[1.125rem] text-text-color hover:text-gray-700 duration-300' href={item.href}>{item.title}</Link>
+            <NavLink asSubLink={item.subLinks.length > 0} key={item.id} subLinks={item.subLinks}  title={item.title} href={item.href}/>
           ))}
         </div>
         <Link key={data.headerItems[data.headerItems.length - 1].id} className='text-[1.125rem] text-text-color duration-300 hover:text-gray-700 hidden lg:block' href={data.headerItems[data.headerItems.length - 1].href}>{data.headerItems[data.headerItems.length - 1].title}</Link>
