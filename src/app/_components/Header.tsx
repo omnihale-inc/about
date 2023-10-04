@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons/lib/esm/iconContext';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { Caesar_Dressing } from 'next/font/google';
@@ -16,7 +16,6 @@ const ceaserDressing = Caesar_Dressing({
 });
 
 const Header = () => {
-  const [companyDropdown, setCompanyDropdown] = useState(false);
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
   const mobileNavHandler = (state: boolean) => {
     setMobileNavIsOpen(state);
@@ -25,11 +24,7 @@ const Header = () => {
     <div>
       {/* logo desktop */}
       <div className='hidden md:block'>
-        <DesktopNavigation
-          font={ceaserDressing}
-          companyDropDown={companyDropdown}
-          onCompanyDropDown={setCompanyDropdown}
-        />
+        <DesktopNavigation font={ceaserDressing} />
       </div>
       <div className='flex justify-between items-center md:hidden p-[24px] pt-[71px]'>
         {/* logo mobile */}
@@ -59,8 +54,6 @@ const Header = () => {
           <MobileNavigation
             mobileNavIsOpen
             onMobileNavOpen={mobileNavHandler}
-            companyDropDown={companyDropdown}
-            onCompanyDropDown={setCompanyDropdown}
           />
         )}
       </AnimatePresence>
