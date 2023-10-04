@@ -12,4 +12,4 @@ yarn run dev
 
 ```
 
-visit [about](https://about-omnihale.netlify.app) for the staging
+visit [about](https://about.omnihale.com) for the company website
