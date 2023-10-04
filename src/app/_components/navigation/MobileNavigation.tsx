@@ -18,8 +18,6 @@ const ceaserDressing = Caesar_Dressing({
 type MobileNavigationProps = {
   mobileNavIsOpen: boolean;
   onMobileNavOpen: (state: boolean) => void;
-  onCompanyDropDown: React.Dispatch<React.SetStateAction<boolean>>;
-  companyDropDown: boolean;
 };
 
 const WhiteContactUsButton = withWhiteButton(ContactUsButton);
@@ -32,12 +30,13 @@ const MobileNavigation = (props: MobileNavigationProps) => {
     const targetId = document.getElementById('mobile-nav');
     targetId?.appendChild(containerElement);
     () => targetId?.removeChild(containerElement);
-  });
+  }, [containerElement]);
   return createPortal(<Node {...props} />, containerElement);
 };
 
 // Adds this Node component as child to div container in mobile-nav Id
 function Node(props: MobileNavigationProps) {
+  const [companyDropdown, setCompanyDropdown] = useState(false);
   return (
     // Animates the Node into and outside the screen
     <motion.div
@@ -45,7 +44,7 @@ function Node(props: MobileNavigationProps) {
       initial={{ x: -650 }}
       animate={{ x: 0, transition: { duration: 0.5, ease: 'easeIn' } }}
       exit={{ x: -650, transition: { duration: 0.5, ease: 'easeOut' } }}
-      className='h-full w-full bg-[#247e5b] absolute text-[white] px-[24px] sm:hidden'
+      className='h-[100vh] supports-[height: 100dvh]:h-[100dvh] w-full bg-[#247e5b] absolute text-[white] px-[24px] sm:hidden'
     >
       {/* logo */}
       <div className='flex justify-between mt-[71px]'>
@@ -85,12 +84,12 @@ function Node(props: MobileNavigationProps) {
               <>
                 <div className='flex items-center justify-between p-[16px]'>
                   <li>{text}</li>
-                  {props.companyDropDown ? (
+                  {companyDropdown ? (
                     <motion.button
                       initial={{ rotate: '180deg' }}
                       animate={{ rotate: '360deg' }}
                       transition={{ duration: 0.3 }}
-                      onClick={() => props.onCompanyDropDown(false)}
+                      onClick={() => setCompanyDropdown(false)}
                     >
                       <MdArrowDropDown />
                     </motion.button>
@@ -99,7 +98,7 @@ function Node(props: MobileNavigationProps) {
                       initial={{ rotate: '0deg' }}
                       animate={{ rotate: '180deg' }}
                       transition={{ duration: 0.3 }}
-                      onClick={() => props.onCompanyDropDown(true)}
+                      onClick={() => setCompanyDropdown(true)}
                     >
                       <MdArrowDropDown />
                     </motion.button>
@@ -107,7 +106,7 @@ function Node(props: MobileNavigationProps) {
                 </div>
                 <AnimatePresence>
                   {/* show company dropdown */}
-                  {props.companyDropDown && (
+                  {companyDropdown && (
                     <ul className='ml-[38px] text-[16px] overflow-hidden'>
                       {['Overview', 'People', 'Contact Us'].map((text) => (
                         <motion.li
