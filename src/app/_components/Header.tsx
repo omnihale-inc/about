@@ -1,14 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { IconContext } from 'react-icons/lib/esm/iconContext';
-import { AiOutlineMenu } from 'react-icons/ai';
 import { Caesar_Dressing } from 'next/font/google';
 
 import DesktopNavigation from './navigation/DesktopNavigation';
 import MobileNavigation from './navigation/MobileNavigation';
 import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
+import Menu from './Menu';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -16,7 +15,6 @@ const ceaserDressing = Caesar_Dressing({
 });
 
 const Header = () => {
-  const [companyDropdown, setCompanyDropdown] = useState(false);
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
   const mobileNavHandler = (state: boolean) => {
     setMobileNavIsOpen(state);
@@ -25,11 +23,7 @@ const Header = () => {
     <div>
       {/* logo desktop */}
       <div className='hidden md:block'>
-        <DesktopNavigation
-          font={ceaserDressing}
-          companyDropDown={companyDropdown}
-          onCompanyDropDown={setCompanyDropdown}
-        />
+        <DesktopNavigation font={ceaserDressing} />
       </div>
       <div className='flex justify-between items-center md:hidden p-[24px] pt-[71px]'>
         {/* logo mobile */}
@@ -42,13 +36,9 @@ const Header = () => {
           </h3>
         </div>
         {/* styles the AiOutlineMenu icon */}
-        <IconContext.Provider
-          value={{ size: '20px', style: { color: '#247e5b' } }}
-        >
-          <div onClick={() => mobileNavHandler(true)}>
-            <AiOutlineMenu />
-          </div>
-        </IconContext.Provider>
+        <div onClick={() => mobileNavHandler(true)}>
+          <Menu />
+        </div>
       </div>
       {/* 
         shows menu icon on small screen and hidden on,
@@ -59,8 +49,6 @@ const Header = () => {
           <MobileNavigation
             mobileNavIsOpen
             onMobileNavOpen={mobileNavHandler}
-            companyDropDown={companyDropdown}
-            onCompanyDropDown={setCompanyDropdown}
           />
         )}
       </AnimatePresence>

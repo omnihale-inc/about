@@ -5,16 +5,17 @@ import { MdArrowDropDown } from 'react-icons/md';
 
 import { withGreenButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
+import { IconContext } from 'react-icons';
+import { useState } from 'react';
 
 type DesktopNavigationProps = {
   font: NextFont;
-  companyDropDown: boolean;
-  onCompanyDropDown: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const GreenContactUsButton = withGreenButton(ContactUsButton);
 
 const DesktopNavigation = (props: DesktopNavigationProps) => {
+  const [companyDropdown, setCompanyDropdown] = useState(false);
   return (
     <div className='flex pt-[70px] px-[80px] items-center justify-between'>
       <div className='flex items-center'>
@@ -30,35 +31,39 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
           <li>About</li>
           <li className='relative'>
             Company
-            {props.companyDropDown ? (
+            {companyDropdown ? (
               <motion.button
                 initial={{ rotate: '0deg' }}
                 animate={{ rotate: '180deg' }}
                 transition={{ duration: 0.3 }}
-                className='absolute top-[6px]'
-                onClick={() => props.onCompanyDropDown(false)}
+                className='absolute top-[1px]'
+                onClick={() => setCompanyDropdown(false)}
               >
-                <MdArrowDropDown />
+                <IconContext.Provider value={{ size: '25px' }}>
+                  <MdArrowDropDown />
+                </IconContext.Provider>
               </motion.button>
             ) : (
               <motion.button
                 initial={{ rotate: '180deg' }}
                 animate={{ rotate: '360deg' }}
                 transition={{ duration: 0.3 }}
-                className='absolute top-[6px]'
-                onClick={() => props.onCompanyDropDown(true)}
+                className='absolute top-[1px]'
+                onClick={() => setCompanyDropdown(true)}
               >
-                <MdArrowDropDown />
+                <IconContext.Provider value={{ size: '25px' }}>
+                  <MdArrowDropDown />
+                </IconContext.Provider>
               </motion.button>
             )}
             <AnimatePresence>
-              {props.companyDropDown && (
+              {companyDropdown && (
                 <motion.ul
                   initial={{ y: -25 }}
                   animate={{ y: 0 }}
                   exit={{ y: -25 }}
                   transition={{ duration: 0.3 }}
-                  className=' absolute mt-[20px] bg-white'
+                  className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] border-solid border-black'
                 >
                   <li>Overview</li>
                   <li>People</li>
