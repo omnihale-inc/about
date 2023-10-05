@@ -32,7 +32,6 @@ const MobileNavigation = (props: MobileNavigationProps) => {
     targetId?.appendChild(containerElement);
     () => targetId?.removeChild(containerElement);
   });
-
   return createPortal(<Node {...props} />, containerElement);
 };
 
@@ -46,7 +45,7 @@ function Node(props: MobileNavigationProps) {
       initial={{ x: -650 }}
       animate={{ x: 0, transition: { duration: 0.5, ease: 'easeIn' } }}
       exit={{ x: -650, transition: { duration: 0.5, ease: 'easeOut' } }}
-      className='h-full w-full bg-[#247e5b] absolute text-[white] px-[24px] sm:hidden'
+      className='h-[100vh] supports-[height: 100dvh]:h-[100dvh] w-full bg-[#247e5b] absolute text-[white] px-[24px] sm:hidden'
     >
       {/* logo */}
       <div className='flex justify-between mt-[71px]'>
