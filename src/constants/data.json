@@ -39,5 +39,49 @@
     },
     "vision": {
         "description": "Introducing Our Visionary Team: Pioneers of Omnihale Solutions for a Transformed Human Experience"
+    },
+    "footer": {
+        "icon": "/images/icons/footer-logo.svg",
+        "copy-right": "/images/icons/copy-right.svg",
+        "links": [
+            {
+                "id": 144,
+                "href": "/",
+                "isDrop": false,
+                "text": "Home",
+                "sublink": []
+            },
+            {
+                "id": 212,
+                "href": "#",
+                "isDrop": false,
+                "text": "Company",
+                "sublink": [
+                    {
+                        "id": 312,
+                        "href": "/company/overview",
+                        "text": "Overview"   
+                    },
+                    {
+                        "id": 321,
+                        "href": "/company/people",
+                        "text": "People"   
+                    },
+                    {
+                        "id": 321,
+                        "href": "/company/contact",
+                        "text": "Contact us"   
+                    }
+                    
+                ]
+            },
+            {
+                "id": 67,
+                "href": "/prodcut",
+                "isDrop": false,
+                "text": "Product",
+                "sublink": []
+            }
+        ]
     }
 }
