@@ -5,6 +5,7 @@ import { MdArrowDropDown } from 'react-icons/md';
 
 import { withGreenButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
+import { IconContext } from 'react-icons';
 import { useState } from 'react';
 
 type DesktopNavigationProps = {
@@ -35,20 +36,24 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
                 initial={{ rotate: '0deg' }}
                 animate={{ rotate: '180deg' }}
                 transition={{ duration: 0.3 }}
-                className='absolute top-[6px]'
+                className='absolute top-[1px]'
                 onClick={() => setCompanyDropdown(false)}
               >
-                <MdArrowDropDown />
+                <IconContext.Provider value={{ size: '25px' }}>
+                  <MdArrowDropDown />
+                </IconContext.Provider>
               </motion.button>
             ) : (
               <motion.button
                 initial={{ rotate: '180deg' }}
                 animate={{ rotate: '360deg' }}
                 transition={{ duration: 0.3 }}
-                className='absolute top-[6px]'
+                className='absolute top-[1px]'
                 onClick={() => setCompanyDropdown(true)}
               >
-                <MdArrowDropDown />
+                <IconContext.Provider value={{ size: '25px' }}>
+                  <MdArrowDropDown />
+                </IconContext.Provider>
               </motion.button>
             )}
             <AnimatePresence>
@@ -58,7 +63,7 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
                   animate={{ y: 0 }}
                   exit={{ y: -25 }}
                   transition={{ duration: 0.3 }}
-                  className=' absolute mt-[20px] bg-white'
+                  className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] border-solid border-black'
                 >
                   <li>Overview</li>
                   <li>People</li>

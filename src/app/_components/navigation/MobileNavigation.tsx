@@ -24,13 +24,14 @@ const WhiteContactUsButton = withWhiteButton(ContactUsButton);
 
 const MobileNavigation = (props: MobileNavigationProps) => {
   const containerElement = document.createElement('div');
+
   useEffect(() => {
     // Checks the mobile-nav Id and attachs the div element which will
     // the container for the rest of our mobile-nav node
     const targetId = document.getElementById('mobile-nav');
     targetId?.appendChild(containerElement);
     () => targetId?.removeChild(containerElement);
-  }, [containerElement]);
+  });
   return createPortal(<Node {...props} />, containerElement);
 };
 
@@ -82,7 +83,10 @@ function Node(props: MobileNavigationProps) {
           if (text === 'Company')
             return (
               <>
-                <div className='flex items-center justify-between p-[16px]'>
+                <div
+                  key={text}
+                  className='flex items-center justify-between p-[16px]'
+                >
                   <li>{text}</li>
                   {companyDropdown ? (
                     <motion.button
