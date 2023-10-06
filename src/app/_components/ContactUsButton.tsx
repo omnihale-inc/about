@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 type ContactUsButtonProps = {
@@ -5,5 +7,14 @@ type ContactUsButtonProps = {
 };
 
 export default function ContactUsButton(props: ContactUsButtonProps) {
-  return <button className={props.className}>Contact Us</button>;
+  return (
+    <button
+      // Triggers the user default emailing software with this
+      // email as recipent
+      onClick={() => (window.location.href = 'mailto:contact@omnihale.com')}
+      className={props.className}
+    >
+      Contact Us
+    </button>
+  );
 }

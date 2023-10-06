@@ -1,6 +1,5 @@
 import ContactUsButton from '@/app/_components/ContactUsButton';
 import CtaParagraph from '@/app/_components/Element/CtaParagraph';
-import Heading from '@/app/_components/Element/Heading';
 import HeroWrapper from '@/app/_components/Element/HeroWrapper';
 import Paragraph from '@/app/_components/Element/Paragraph';
 import HeroText from '@/app/_components/HeroText';
