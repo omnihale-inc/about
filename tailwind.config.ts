@@ -13,7 +13,12 @@ const config: Config = {
         'primary-color': 'var(--primary-color)',
         'white-color': 'var(--white-color)',
         'read-more': 'var(--read-more)',
-        'light-gray': 'var(--light-gray)'
+        'light-gray': 'var(--light-gray)',
+        'green-color': 'var(--green-color)'
+      },
+      backgroundImage: {
+        "company-hero-desk": "url('/images/company/company-hero.jpg')",
+        "company-hero-mob": "url('/images/company/company-hero-mob.jpg')"
       }
     },
   },
