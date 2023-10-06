@@ -3,6 +3,7 @@ import CtaParagraph from '@/app/_components/Element/CtaParagraph';
 import Heading from '@/app/_components/Element/Heading';
 import HeroWrapper from '@/app/_components/Element/HeroWrapper';
 import Paragraph from '@/app/_components/Element/Paragraph';
+import HeroText from '@/app/_components/HeroText';
 import { withGreenButton } from '@/app/_components/withButtonStyle';
 import data from '@/constants/data.json';
 
@@ -15,8 +16,10 @@ export default function page() {
         <div className='flex flex-col gap-4'>
           <div className='flex flex-col gap-10 lg:gap-16'>
             <div className='flex flex-col max-w-2xl mx-auto gap-6 items-center'>
-              <Heading text={company.title} />
-              <Paragraph text={company.description} isCentered={true} />
+              <HeroText
+                title={company.title}
+                description={company.description}
+              />
             </div>
             {/* hero */}
             <HeroWrapper bgClass={company.bgHero} />

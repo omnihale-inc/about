@@ -1,15 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
+import data from '@/constants/data.json';
+
 const HeroDeskImage = () => {
+  const { imageDesk } = data.homepage.heroText;
   return (
     <div className='hidden sm:block relative h-[400px] mx-[80px]'>
-      <Image
-        src='/images/homepage/hero-desk.png'
-        alt='hero-desk'
-        fill
-        objectFit='cover'
-      />
+      <Image src={imageDesk} alt='hero-desk' fill objectFit='cover' />
     </div>
   );
 };

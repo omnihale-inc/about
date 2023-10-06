@@ -63,7 +63,7 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
                   animate={{ y: 0 }}
                   exit={{ y: -25 }}
                   transition={{ duration: 0.3 }}
-                  className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] border-solid border-black'
+                  className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] w-[max-content]'
                 >
                   <li>Overview</li>
                   <li>People</li>
