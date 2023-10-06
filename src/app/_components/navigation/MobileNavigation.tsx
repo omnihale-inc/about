@@ -31,7 +31,12 @@ const MobileNavigation = (props: MobileNavigationProps) => {
     // the container for the rest of our mobile-nav node
     const targetId = document.getElementById('mobile-nav');
     targetId?.appendChild(containerElement);
-    () => targetId?.removeChild(containerElement);
+    const body = document.querySelector('body');
+    body?.setAttribute('style', 'overflow:hidden');
+    () => {
+      targetId?.removeChild(containerElement);
+      body?.removeAttribute('style');
+    };
   });
   return createPortal(<Node {...props} />, containerElement);
 };
