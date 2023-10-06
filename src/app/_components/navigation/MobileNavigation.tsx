@@ -9,6 +9,7 @@ import { Caesar_Dressing } from 'next/font/google';
 
 import { withWhiteButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
+import React from 'react';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -82,11 +83,8 @@ function Node(props: MobileNavigationProps) {
         {['About', 'Company', 'Product'].map((text) => {
           if (text === 'Company')
             return (
-              <>
-                <div
-                  key={text}
-                  className='flex items-center justify-between p-[16px]'
-                >
+              <React.Fragment key={text}>
+                <div className='flex items-center justify-between p-[16px]'>
                   <li>{text}</li>
                   {companyDropdown ? (
                     <motion.button
@@ -126,7 +124,7 @@ function Node(props: MobileNavigationProps) {
                     </ul>
                   )}
                 </AnimatePresence>
-              </>
+              </React.Fragment>
             );
           return (
             <li key={text} className='p-[16px]'>
