@@ -9,6 +9,7 @@ import { Caesar_Dressing } from 'next/font/google';
 
 import { withWhiteButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
+import React from 'react';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -24,13 +25,14 @@ const WhiteContactUsButton = withWhiteButton(ContactUsButton);
 
 const MobileNavigation = (props: MobileNavigationProps) => {
   const containerElement = document.createElement('div');
+
   useEffect(() => {
     // Checks the mobile-nav Id and attachs the div element which will
     // the container for the rest of our mobile-nav node
     const targetId = document.getElementById('mobile-nav');
     targetId?.appendChild(containerElement);
     () => targetId?.removeChild(containerElement);
-  }, [containerElement]);
+  });
   return createPortal(<Node {...props} />, containerElement);
 };
 
@@ -81,7 +83,7 @@ function Node(props: MobileNavigationProps) {
         {['About', 'Company', 'Product'].map((text) => {
           if (text === 'Company')
             return (
-              <>
+              <React.Fragment key={text}>
                 <div className='flex items-center justify-between p-[16px]'>
                   <li>{text}</li>
                   {companyDropdown ? (
@@ -122,7 +124,7 @@ function Node(props: MobileNavigationProps) {
                     </ul>
                   )}
                 </AnimatePresence>
-              </>
+              </React.Fragment>
             );
           return (
             <li key={text} className='p-[16px]'>

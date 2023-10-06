@@ -1,14 +1,12 @@
 'use client';
-
-import { useEffect, useState } from 'react';
-import { IconContext } from 'react-icons/lib/esm/iconContext';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { useState } from 'react';
 import { Caesar_Dressing } from 'next/font/google';
 
 import DesktopNavigation from './navigation/DesktopNavigation';
 import MobileNavigation from './navigation/MobileNavigation';
 import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
+import Menu from './Menu';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -37,13 +35,9 @@ const Header = () => {
           </h3>
         </div>
         {/* styles the AiOutlineMenu icon */}
-        <IconContext.Provider
-          value={{ size: '20px', style: { color: '#247e5b' } }}
-        >
-          <div onClick={() => mobileNavHandler(true)}>
-            <AiOutlineMenu />
-          </div>
-        </IconContext.Provider>
+        <div onClick={() => mobileNavHandler(true)}>
+          <Menu />
+        </div>
       </div>
       {/* 
         shows menu icon on small screen and hidden on,
