@@ -77,6 +77,8 @@ function Node(props: MobileNavigationProps) {
           <div
             onClick={() => {
               props.onMobileNavOpen(false);
+              const body = document.querySelector('body');
+              body?.removeAttribute('style');
             }}
           >
             <AiOutlineCloseCircle />
