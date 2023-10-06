@@ -5,7 +5,7 @@ const HeroMob = () => {
   return (
     <div className='block sm:hidden px-[24px] mx-[auto] w-[fit-content]'>
       <Image
-        src='/images/homepage/hero-mobile.png'
+        src='/images/homepage/hero-mobile.jpg'
         alt='hero-desk'
         width={366}
         height={240}

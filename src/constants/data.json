@@ -22,7 +22,7 @@
     }
   ],
   "homepage": {
-    "heroSection": {
+    "heroText": {
       "title": "Techno Sentience",
       "description": "Our mission is to empower humanity's evolution through innovation, technology, and cosmic progress",
       "imageMob": "/images/homepage/hero-mobile.jpg",
