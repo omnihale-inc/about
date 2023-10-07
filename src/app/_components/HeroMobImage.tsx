@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 
-import data from '@/constants/data.json';
-
-const HeroMob = () => {
-  const { imageMob } = data.homepage.heroText;
+type HeroMobImageProps = {
+  imgSrc: string;
+};
+const HeroMobImage = (props: HeroMobImageProps) => {
   return (
-    <div className='block md:hidden px-[24px] mx-[auto] w-[366px] h-[240px] relative'>
-      <Image src={imageMob} alt='hero-desk' fill objectFit='cover' />
+    <div className='block md:hidden h-[240px] relative'>
+      <Image src={props.imgSrc} alt='hero-desk' fill objectFit='cover' />
     </div>
   );
 };
 
-export default HeroMob;
+export default HeroMobImage;

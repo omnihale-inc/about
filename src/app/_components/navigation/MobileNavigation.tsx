@@ -10,6 +10,7 @@ import { Caesar_Dressing } from 'next/font/google';
 import { withWhiteButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
 import React from 'react';
+import Link from 'next/link';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -51,7 +52,7 @@ function Node(props: MobileNavigationProps) {
       initial={{ x: -650 }}
       animate={{ x: 0, transition: { duration: 0.5, ease: 'easeIn' } }}
       exit={{ x: -650, transition: { duration: 0.5, ease: 'easeOut' } }}
-      className='h-[100vh] supports-[height: 100dvh]:h-[100dvh] w-full bg-[#247e5b] absolute text-[white] px-[24px] md:hidden'
+      className='h-[100vh] supports-[height: 100dvh]:h-[100dvh] w-full bg-[#247e5b] absolute text-[white] px-[24px] md:hidden z-30'
     >
       {/* logo */}
       <div className='flex justify-between mt-[71px]'>
@@ -87,16 +88,22 @@ function Node(props: MobileNavigationProps) {
       </div>
       {/* renders the navigation items */}
       <ul className='text-white text-[20px] mt-[56px]'>
-        {['About', 'Company', 'Product'].map((text) => {
-          if (text === 'Company')
+        {[
+          { name: 'About', url: '/' },
+          { name: 'Company', url: '#' },
+          { name: 'Product', url: 'https://omnihale.com' },
+        ].map((text) => {
+          if (text.name === 'Company')
             return (
-              <React.Fragment key={text}>
+              <React.Fragment key={text.name}>
                 <div className='flex items-center justify-between p-[16px]'>
-                  <li>{text}</li>
+                  <a href={text.url}>
+                    <li>{text.name}</li>
+                  </a>
                   {companyDropdown ? (
                     <motion.button
-                      initial={{ rotate: '180deg' }}
-                      animate={{ rotate: '360deg' }}
+                      initial={{ rotate: '0deg' }}
+                      animate={{ rotate: '180deg' }}
                       transition={{ duration: 0.3 }}
                       onClick={() => setCompanyDropdown(false)}
                     >
@@ -104,8 +111,8 @@ function Node(props: MobileNavigationProps) {
                     </motion.button>
                   ) : (
                     <motion.button
-                      initial={{ rotate: '0deg' }}
-                      animate={{ rotate: '180deg' }}
+                      initial={{ rotate: '180deg' }}
+                      animate={{ rotate: '360deg' }}
                       transition={{ duration: 0.3 }}
                       onClick={() => setCompanyDropdown(true)}
                     >
@@ -117,16 +124,25 @@ function Node(props: MobileNavigationProps) {
                   {/* show company dropdown */}
                   {companyDropdown && (
                     <ul className='ml-[38px] text-[16px] overflow-hidden'>
-                      {['Overview', 'People', 'Contact Us'].map((text) => (
-                        <motion.li
-                          initial={{ y: -100 }}
-                          animate={{ y: 0 }}
-                          exit={{ y: -100 }}
-                          transition={{ delay: 0.1, duration: 0.2 }}
-                          key={text}
-                        >
-                          {text}
-                        </motion.li>
+                      {[
+                        { name: 'Overview', url: '/company/overview' },
+                        { name: 'People', url: '/company/team' },
+                        {
+                          name: 'Contact Us',
+                          url: 'mailto:contact@omnihale.com',
+                        },
+                      ].map((text) => (
+                        <a href={text.url} key={text.name}>
+                          <motion.li
+                            initial={{ y: -100 }}
+                            animate={{ y: 0 }}
+                            exit={{ y: -100 }}
+                            transition={{ delay: 0.1, duration: 0.2 }}
+                            className='mb-[16px]'
+                          >
+                            {text.name}
+                          </motion.li>
+                        </a>
                       ))}
                     </ul>
                   )}
@@ -134,9 +150,9 @@ function Node(props: MobileNavigationProps) {
               </React.Fragment>
             );
           return (
-            <li key={text} className='p-[16px]'>
-              {text}
-            </li>
+            <a href={text.url} key={text.name}>
+              <li className='p-[16px]'>{text.name}</li>
+            </a>
           );
         })}
       </ul>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import { AnimatePresence, motion } from 'framer-motion';
-import { MdArrowDropDown } from 'react-icons/md';
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 
 import { withGreenButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
@@ -16,6 +16,10 @@ const GreenContactUsButton = withGreenButton(ContactUsButton);
 
 const DesktopNavigation = (props: DesktopNavigationProps) => {
   const [companyDropdown, setCompanyDropdown] = useState(false);
+  const [animate, setAnimate] = useState({
+    buttonRotateDown: false,
+    buttonRotateUp: false,
+  });
   return (
     <div className='flex pt-[70px] px-[80px] items-center justify-between'>
       <div className='flex items-center'>
@@ -23,56 +27,72 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
         <h3
           className={`${props.font.className} ml-[12px] text-2xl text-[#404040] tracking-wider`}
         >
-          Omnihale
+          <a href='/'>Omnihale</a>
         </h3>
       </div>
       <div className='md:basis-[201px]  lg:basis-[391px] text-[#247e5b]'>
         <ul className='flex justify-between '>
-          <li>About</li>
+          <a href='/'>
+            <li>About</li>
+          </a>
           <li className='relative'>
             Company
             {companyDropdown ? (
               <motion.button
                 initial={{ rotate: '0deg' }}
-                animate={{ rotate: '180deg' }}
-                transition={{ duration: 0.3 }}
+                animate={{
+                  rotate: animate.buttonRotateDown ? '180deg' : '0deg',
+                }}
+                transition={{ duration: 1 }}
                 className='absolute top-[1px]'
-                onClick={() => setCompanyDropdown(false)}
+                onClick={() => {
+                  setAnimate({ buttonRotateDown: true, buttonRotateUp: false });
+                  setCompanyDropdown(false);
+                }}
               >
                 <IconContext.Provider value={{ size: '25px' }}>
-                  <MdArrowDropDown />
+                  <MdArrowDropUp />
                 </IconContext.Provider>
               </motion.button>
             ) : (
               <motion.button
-                initial={{ rotate: '180deg' }}
-                animate={{ rotate: '360deg' }}
-                transition={{ duration: 0.3 }}
+                initial={{ rotate: '0deg' }}
+                animate={{
+                  rotate: animate.buttonRotateUp ? '180deg' : '0deg',
+                }}
+                transition={{ duration: 1 }}
                 className='absolute top-[1px]'
-                onClick={() => setCompanyDropdown(true)}
+                onClick={() => {
+                  setAnimate({ buttonRotateDown: false, buttonRotateUp: true });
+                  setCompanyDropdown(true);
+                }}
               >
                 <IconContext.Provider value={{ size: '25px' }}>
                   <MdArrowDropDown />
                 </IconContext.Provider>
               </motion.button>
             )}
-            <AnimatePresence>
-              {companyDropdown && (
-                <motion.ul
-                  initial={{ y: -25 }}
-                  animate={{ y: 0 }}
-                  exit={{ y: -25 }}
-                  transition={{ duration: 0.3 }}
-                  className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] w-[max-content]'
-                >
+            {companyDropdown && (
+              <motion.ul
+                initial={{ y: -25 }}
+                animate={{ y: 0 }}
+                exit={{ y: -25 }}
+                transition={{ duration: 0.3 }}
+                className=' absolute mt-[20px] bg-white px-[10px] pb-[10px] w-[max-content]'
+              >
+                <a href='/company/overview'>
                   <li>Overview</li>
-                  <li>People</li>
+                </a>
+                <li>People</li>
+                <a href='mailto:contact@omnihale.com'>
                   <li>Contact Us</li>
-                </motion.ul>
-              )}
-            </AnimatePresence>
+                </a>
+              </motion.ul>
+            )}
           </li>
-          <li>Product</li>
+          <a href='https://omnihale.com'>
+            <li>Product</li>
+          </a>
         </ul>
       </div>
       <div>

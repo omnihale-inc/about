@@ -86,9 +86,12 @@
     ]
   },
   "company": {
-    "title": "The Company",
-    "description": "At Omnihale, our primary emphasis is on propelling humanity's progress through groundbreaking innovation.",
-    "bgHero": "bg-company-hero-mob lg:bg-company-hero-desk",
+    "heroText": {
+      "title": "The Company",
+      "description": "At Omnihale, our primary emphasis is on propelling humanity's progress through groundbreaking innovation.",
+      "imageMob": "/images/company/company-hero-mob.jpg",
+      "imageDesk": "/images/company/company-hero.jpg"
+    },
     "action": {
       "text": "Access our dedicated team for essential support, guidance, and resource to empower your success, fostering growth and resilience",
       "button": "Contact Us"

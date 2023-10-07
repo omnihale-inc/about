@@ -2,6 +2,8 @@ import ContactUsButton from '@/app/_components/ContactUsButton';
 import CtaParagraph from '@/app/_components/Element/CtaParagraph';
 import HeroWrapper from '@/app/_components/Element/HeroWrapper';
 import Paragraph from '@/app/_components/Element/Paragraph';
+import HeroDeskImage from '@/app/_components/HeroDeskImage';
+import HeroMobImage from '@/app/_components/HeroMobImage';
 import HeroText from '@/app/_components/HeroText';
 import { withGreenButton } from '@/app/_components/withButtonStyle';
 import data from '@/constants/data.json';
@@ -14,16 +16,18 @@ export default function page() {
       <div className='container-wrap mx-auto'>
         <div className='flex flex-col gap-4'>
           <div className='flex flex-col gap-10 lg:gap-16'>
-            <div className='flex flex-col max-w-2xl mx-auto gap-6 items-center'>
+            <div className='flex flex-col max-w-2xl mx-auto gap-6 items-center mt-[-30px]'>
               <HeroText
-                title={company.title}
-                description={company.description}
+                title={company.heroText.title}
+                description={company.heroText.description}
               />
             </div>
-            {/* hero */}
-            <HeroWrapper bgClass={company.bgHero} />
+            <div className='mt-[-30px]'>
+              <HeroDeskImage imgSrc={company.heroText.imageDesk} />
+              <HeroMobImage imgSrc={company.heroText.imageMob} />
+            </div>
           </div>
-          <article className='flex flex-col gap-4'>
+          <article className='flex flex-col gap-4 mt-10'>
             {company.paragraphs.map((paragraph, _) => (
               <Paragraph key={paragraph.id} text={paragraph.text} />
             ))}
