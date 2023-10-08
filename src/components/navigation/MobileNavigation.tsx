@@ -10,7 +10,6 @@ import { Caesar_Dressing } from 'next/font/google';
 import { withWhiteButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
 import React from 'react';
-import Link from 'next/link';
 
 const ceaserDressing = Caesar_Dressing({
   weight: '400',
@@ -35,7 +34,7 @@ const MobileNavigation = (props: MobileNavigationProps) => {
     const body = document.querySelector('body');
     body?.setAttribute('style', 'overflow:hidden');
     () => {
-      targetId?.removeChild(containerElement);
+      if (targetId?.lastChild) targetId?.removeChild(targetId.lastChild);
       body?.removeAttribute('style');
     };
   });
@@ -78,6 +77,14 @@ function Node(props: MobileNavigationProps) {
           <div
             onClick={() => {
               props.onMobileNavOpen(false);
+
+              // Removes the containerElement div from the mobile-nav
+              // to help keep the mobile-nav cleaner
+              const targetId = document.getElementById('mobile-nav');
+              if (targetId?.lastChild)
+                targetId?.removeChild(targetId.lastChild);
+
+              // Removes the body  style
               const body = document.querySelector('body');
               body?.removeAttribute('style');
             }}
