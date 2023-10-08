@@ -1,26 +1,4 @@
 {
-  "headerItems": [
-    {
-      "id": 1,
-      "title": "Company",
-      "href": "#"
-    },
-    {
-      "id": 2,
-      "title": "People",
-      "href": "#"
-    },
-    {
-      "id": 3,
-      "title": "Values",
-      "href": "#"
-    },
-    {
-      "id": 4,
-      "title": "Product",
-      "href": "#"
-    }
-  ],
   "homepage": {
     "heroText": {
       "title": "Techno Sentience",
@@ -50,8 +28,7 @@
         "id": 144,
         "href": "/",
         "isDrop": false,
-        "text": "Home",
-        "sublink": []
+        "text": "Home"
       },
       {
         "id": 212,
@@ -78,10 +55,9 @@
       },
       {
         "id": 67,
-        "href": "/prodcut",
+        "href": "https://omnihale.com",
         "isDrop": false,
-        "text": "Product",
-        "sublink": []
+        "text": "Product"
       }
     ]
   },
