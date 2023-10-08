@@ -1,8 +1,8 @@
-import HeroDeskImage from './_components/HeroDeskImage';
-import HeroMobImage from './_components/HeroMobImage';
-import HeroText from './_components/HeroText';
-import Team from './_components/Team';
-import Values from './_components/Values';
+import HeroDeskImage from '@/components/HeroDeskImage';
+import HeroMobImage from '@/components/HeroMobImage';
+import HeroText from '@/components/HeroText';
+import Team from '@/components/Team';
+import Values from '@/components/Values';
 import data from '@/constants/data.json';
 
 export default function Home() {

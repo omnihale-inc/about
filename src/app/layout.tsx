@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import Footer from './_components/Footer';
-import Header from './_components/Header';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 const satoshi = localFont({
   src: './_fonts/Satoshi_Complete/Satoshi_Complete/Fonts/Variable/Satoshi-Variable.ttf',

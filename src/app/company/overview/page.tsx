@@ -1,11 +1,10 @@
-import ContactUsButton from '@/app/_components/ContactUsButton';
-import CtaParagraph from '@/app/_components/Element/CtaParagraph';
-import HeroWrapper from '@/app/_components/Element/HeroWrapper';
-import Paragraph from '@/app/_components/Element/Paragraph';
-import HeroDeskImage from '@/app/_components/HeroDeskImage';
-import HeroMobImage from '@/app/_components/HeroMobImage';
-import HeroText from '@/app/_components/HeroText';
-import { withGreenButton } from '@/app/_components/withButtonStyle';
+import ContactUsButton from '@/components/ContactUsButton';
+import CtaParagraph from '@/components/Element/CtaParagraph';
+import Paragraph from '@/components/Element/Paragraph';
+import HeroDeskImage from '@/components/HeroDeskImage';
+import HeroMobImage from '@/components/HeroMobImage';
+import HeroText from '@/components/HeroText';
+import { withGreenButton } from '@/components/withButtonStyle';
 import data from '@/constants/data.json';
 
 export default function page() {
