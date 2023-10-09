@@ -14,7 +14,8 @@ const config: Config = {
         'white-color': 'var(--white-color)',
         'read-more': 'var(--read-more)',
         'light-gray': 'var(--light-gray)',
-        'green-color': 'var(--green-color)'
+        'green-color': 'var(--green-color)',
+        "team-bg": "var(--team-color)"
       },
       backgroundImage: {
         "company-hero-desk": "url('/images/company/company-hero.jpg')",
