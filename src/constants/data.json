@@ -95,5 +95,69 @@
         "text": "Omnihale's unwavering dedication to humanity's evolution through innovation is a beacon of hope in an ever-changing world. As we look to the future, we can count on Omnihale to continue pushing the boundaries of what's possible, reshaping industries, and inspiring others to join the journey towards a brighter tomorrow. In the grand tapestry of human progress, Omnihale is a vibrant thread, weaving the story of innovation, hope, and a better world for all."
       }
     ]
+  },
+  "team": {
+    "title": "Team",
+    "description": "Pioneers of Omnihale Solutions for a Transformed Human Experience",
+    "teams": [
+      {
+        "id":31,
+        "username": "Mahmud Suberu",
+        "position": "Technical Founder",
+        "imgUrl": "/images/team/him.png"
+
+      },
+      {
+        "id":32,
+        "username": "Olajumoke Mafimisebi",
+        "position": "Project Manager",
+        "imgUrl": "/images/team/her.jpg"
+
+      },
+      {
+        "id":33,
+        "username": "Temi Oritsejafor",
+        "position": "Scrum Master",
+        "imgUrl": "/images/team/image.jpg"
+
+      },
+      {
+        "id":34,
+        "username": "Franklin Orere",
+        "position": "UI/UX Developer",
+        "imgUrl": "/images/team/her.jpg"
+
+      },
+      {
+        "id":35,
+        "username": "Barbara Augustine",
+        "position": "Copy UI/UX Designer",
+        "imgUrl": "/images/team/him.png"
+
+      },
+      {
+        "id":36,
+        "username": "Grace Birindwa",
+        "position": "Web App developer",
+        "imgUrl": "/images/team/image.jpg"
+
+      },
+      {
+        "id":37,
+        "username": "Omar Bakry",
+        "position": "Mobile Developer",
+        "imgUrl": "/images/team/him.png"
+
+      },
+      {
+        "id":38,
+        "username": "Odunayo Balogun",
+        "position": "Business Analyst",
+        "imgUrl": "/images/team/image.jpg"
+      }
+    ]
+  },
+  "action":{
+    "paragraph": "Access our dedicated team for essential support, guidance, and resources to empower your success, fostering growth and resilience"
   }
 }
