@@ -10,7 +10,7 @@ export default function Team() {
   const GreenContactUsButton = withGreenButton(ContactUsButton);
   return (
     <div>
-      <div className="container-wrap mx-auto flex flex-col gap-6 items-center">
+      <div className="container-wrap mx-auto flex flex-col gap-6">
         <HeroText
           isPtag={false}
           description={teamData.description}
