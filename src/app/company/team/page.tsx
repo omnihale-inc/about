@@ -10,7 +10,7 @@ export default function Team() {
   const GreenContactUsButton = withGreenButton(ContactUsButton);
   return (
     <div>
-      <div className="container-wrap mx-auto flex flex-col items-center">
+      <div className="container-wrap mx-auto flex flex-col gap-6 items-center">
         <HeroText
           isPtag={false}
           description={teamData.description}
@@ -26,7 +26,7 @@ export default function Team() {
           ))}
         </div>
       </div>
-      <div className="relative scroll-team lg:hidden ml-6 z-0 grid auto-cols-[20rem] grid-flow-col gap-4 overflow-x-auto pt-2">
+      <div className="relative scroll-team lg:hidden mx-6 z-0 grid auto-cols-[20rem] grid-flow-col gap-4 overflow-x-auto pt-2">
         {teamData.teams.map((team, _) => (
           <UserTeam
             key={team.id}
