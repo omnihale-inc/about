@@ -27,15 +27,16 @@
       {
         "id": 144,
         "href": "/",
-        "isDrop": false,
-        "text": "Home"
+        "isDropDow": false,
+        "text": "Home",
+        "sublinks":[]
       },
       {
         "id": 212,
         "href": "#",
-        "isDrop": false,
+        "isDropDow": true,
         "text": "Company",
-        "sublink": [
+        "sublinks": [
           {
             "id": 312,
             "href": "/company/overview",
@@ -56,8 +57,9 @@
       {
         "id": 67,
         "href": "https://omnihale.com",
-        "isDrop": false,
-        "text": "Product"
+        "isDropDow": false,
+        "text": "Product",
+        "sublinks":[]
       }
     ]
   },
