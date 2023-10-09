@@ -1,19 +1,10 @@
+import { navigationLinkProps } from '@/utils/type'
 import Link from 'next/link'
 import React from 'react'
 import { MdArrowDropDown } from 'react-icons/md'
 
-type headerLinkProps = {
-    text: string
-    href: string
-    isDropDow: boolean
-    subLinks?: Array<{
-        id: number
-        text: string
-        href: string
-    }>
-}
 
-const HeaderLink = ({text, href, isDropDow=false, subLinks}: headerLinkProps) => {
+const HeaderLink = ({text, href, isDropDow=false, subLinks}: navigationLinkProps) => {
     return (
         <div className='relative group'>
             <Link className='text-xl flex items-center gap-1 text-green-color font-medium' href={href}>
