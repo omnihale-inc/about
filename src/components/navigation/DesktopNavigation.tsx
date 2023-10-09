@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { NextFont } from 'next/dist/compiled/@next/font';
+import data from '@/constants/data.json'
 import { AnimatePresence, motion } from 'framer-motion';
 import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 
@@ -7,6 +8,7 @@ import { withGreenButton } from '../withButtonStyle';
 import ContactUsButton from '../ContactUsButton';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
+import HeaderLink from '../Element/HeaderLink';
 
 type DesktopNavigationProps = {
   font: NextFont;
@@ -15,13 +17,14 @@ type DesktopNavigationProps = {
 const GreenContactUsButton = withGreenButton(ContactUsButton);
 
 const DesktopNavigation = (props: DesktopNavigationProps) => {
+  const navData = data.footer.links
   const [companyDropdown, setCompanyDropdown] = useState(false);
   const [animate, setAnimate] = useState({
     buttonRotateDown: false,
     buttonRotateUp: false,
   });
   return (
-    <div className='flex pt-[70px] px-[80px] items-center justify-between'>
+    <div className='container-wrap mx-auto flex justify-between items-center pt-16'>
       <div className='flex items-center'>
         <Image src='/logo.svg' width={30} height={30} alt='logo' />
         <h3
@@ -30,8 +33,11 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
           <a href='/'>Omnihale</a>
         </h3>
       </div>
-      <div className='md:basis-[201px]  lg:basis-[391px] text-[#247e5b]'>
-        <ul className='flex justify-between '>
+      <div className='flex space-x-12'>
+        {navData.map((linkItem, _)=> (
+          <HeaderLink subLinks={linkItem.sublinks} href={linkItem.href} text={linkItem.text} isDropDow={linkItem.isDropDow}/>
+        ))}
+        {/* <ul className='flex justify-between '>
           <a href='/'>
             <li>About</li>
           </a>
@@ -93,7 +99,8 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
           <a href='https://omnihale.com'>
             <li>Product</li>
           </a>
-        </ul>
+        </ul> */}
+        
       </div>
       <div>
         <GreenContactUsButton />
