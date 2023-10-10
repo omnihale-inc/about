@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -5,12 +6,14 @@ import data from '@/constants/data.json';
 import FooterLink from './Element/FooterLink';
 import { withWhiteButton } from './withButtonStyle';
 import ContactUsButton from './ContactUsButton';
+import { LayoutGroup,motion } from 'framer-motion'
 
 const Footer = () => {
   const footerData = data.footer;
   const WhiteContactUsButton = withWhiteButton(ContactUsButton);
   return (
-    <footer className='bg-green-color duration-500 transition-all py-5 text-white w-full px-6 lg:px-0'>
+    <LayoutGroup>
+    <motion.footer className='bg-green-color duration-500 transition py-5 text-white w-full px-6 lg:px-0'>
       <div className='flex flex-col gap-8 pt-14 container-wrap mx-auto'>
         <div className='flex flex-col items-start lg:items-center gap-4 lg:flex-row lg:justify-between'>
           <div>
@@ -26,7 +29,7 @@ const Footer = () => {
             <WhiteContactUsButton />
           </Link>
         </div>
-        <div className='flex flex-col duration-500 transition-all gap-8'>
+        <div className='flex flex-col duration-500 transition transform gap-8'>
           {footerData.links.map((link, _) => (
             <FooterLink isDropDow={link.isDropDow} subLinks={link.sublinks} key={`${link.id}-footer`} href={link.href} text={link.text} />
           ))}
@@ -43,7 +46,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
+    </LayoutGroup>
   );
 };
 
