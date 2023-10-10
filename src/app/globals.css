@@ -9,6 +9,7 @@
   --white-color: #fff;
   --light-gray: #d9d9d9;
   --green-color: #247E5B;
+  --team-color: #247E5B1A;
 }
 
 @layer base {
@@ -19,4 +20,8 @@
 
 .container-wrap {
   max-width: 89%;
+}
+
+.scroll-team::-webkit-scrollbar{
+  display: none;
 }

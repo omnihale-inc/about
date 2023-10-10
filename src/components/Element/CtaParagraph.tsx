@@ -1,9 +1,10 @@
 import React from 'react'
+import data from '@/constants/data.json'
 
-function CtaParagraph({text}:{text: string}) {
+function CtaParagraph() {
   return (
-    <p className='text-center text-2xl lg:text-[2.125rem] leading-8'>
-      {text}
+    <p className='text-center text-2xl lg:text-[2.125rem] leading-10'>
+      {data.action.paragraph}
     </p>
   )
 }

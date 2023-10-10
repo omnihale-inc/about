@@ -34,7 +34,7 @@ export default function page() {
         </div>
         {/* action */}
         <div className='max-w-6xl py-32 mx-auto px-4 flex flex-col items-center gap-9'>
-          <CtaParagraph text={company.action.text} />
+          <CtaParagraph />
           <GreenContactUsButton />
         </div>
       </div>
