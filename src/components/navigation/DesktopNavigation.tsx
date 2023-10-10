@@ -25,7 +25,7 @@ const DesktopNavigation = (props: DesktopNavigationProps) => {
       </div>
       <div className='flex space-x-12'>
         {navData.map((linkItem, _)=> (
-          <HeaderLink subLinks={linkItem.sublinks} href={linkItem.href} text={linkItem.text} isDropDow={linkItem.isDropDow}/>
+          <HeaderLink key={linkItem.id} subLinks={linkItem.sublinks} href={linkItem.href} text={linkItem.text} isDropDow={linkItem.isDropDow}/>
         ))}
       </div>
       <div>
