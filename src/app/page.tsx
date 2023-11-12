@@ -1,5 +1,5 @@
 import ContactUsButton from '@/components/ContactUsButton';
-import CtaParagraph from '@/components/Element/CtaParagraph';
+import CtaParagraph from '@/components/Elements/CtaParagraph';
 import HeroDeskImage from '@/components/HeroDeskImage';
 import HeroMobImage from '@/components/HeroMobImage';
 import HeroText from '@/components/HeroText';
@@ -11,7 +11,7 @@ import data from '@/constants/data.json';
 export default function Home() {
   const { title, description, imageDesk, imageMob } = data.homepage.heroText;
   const GreenContactUsButton = withGreenButton(ContactUsButton);
-  const teamData = data.team
+  const teamData = data.team;
   return (
     <>
       <main>

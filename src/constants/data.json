@@ -17,7 +17,7 @@
       "image": "/images/homepage/what-we-value.jpg"
     },
     "vision": {
-      "description": "Introducing Our Visionary Team: Pioneers of Omnihale Solutions for a Transformed Human Experience"
+      "description": "Introducing Our Visionary Founders: Pioneers of Omnihale Solutions for a Transformed Human Experience"
     }
   },
   "footer": {
@@ -29,7 +29,7 @@
         "href": "/",
         "isDropDow": false,
         "text": "Home",
-        "sublinks":[]
+        "sublinks": []
       },
       {
         "id": 212,
@@ -59,7 +59,7 @@
         "href": "https://omnihale.com",
         "isDropDow": false,
         "text": "Product",
-        "sublinks":[]
+        "sublinks": []
       }
     ]
   },
@@ -99,67 +99,36 @@
     ]
   },
   "team": {
-    "title": "The Team",
+    "title": "The Founders",
     "description": "Pioneers of Omnihale Solutions for a Transformed Human Experience",
     "teams": [
       {
-        "id":31,
+        "id": 31,
         "username": "Mahmud Suberu",
-        "position": "Technical Founder",
-        "imgUrl": "/images/team/him.png"
-
+        "position": "Chief Executive Officer",
+        "imgUrl": "/images/team/mahmud.jpg"
       },
       {
-        "id":32,
-        "username": "Olajumoke Mafimisebi",
-        "position": "Project Manager",
+        "id": 32,
+        "username": "Mariam Ibrahim",
+        "position": "Chief Technology Officer",
         "imgUrl": "/images/team/her.jpg"
-
       },
       {
-        "id":33,
-        "username": "Temi Oritsejafor",
-        "position": "Scrum Master",
-        "imgUrl": "/images/team/image.jpg"
-
+        "id": 33,
+        "username": "Mohammed Yusuf",
+        "position": "Chief Strategy Officer",
+        "imgUrl": "/images/team/mohammed.jpg"
       },
       {
-        "id":34,
-        "username": "Franklin Orere",
-        "position": "UI/UX Developer",
-        "imgUrl": "/images/team/her.jpg"
-
-      },
-      {
-        "id":35,
+        "id": 34,
         "username": "Barbara Augustine",
-        "position": "Copy UI/UX Designer",
-        "imgUrl": "/images/team/him.png"
-
-      },
-      {
-        "id":36,
-        "username": "Grace Birindwa",
-        "position": "Web App developer",
-        "imgUrl": "/images/team/image.jpg"
-
-      },
-      {
-        "id":37,
-        "username": "Omar Bakry",
-        "position": "Mobile Developer",
-        "imgUrl": "/images/team/him.png"
-
-      },
-      {
-        "id":38,
-        "username": "Odunayo Balogun",
-        "position": "Business Analyst",
-        "imgUrl": "/images/team/image.jpg"
+        "position": "Chief Design Officer",
+        "imgUrl": "/images/team/barbara.jpg"
       }
     ]
   },
-  "action":{
+  "action": {
     "paragraph": "Access our dedicated team for essential support, guidance, and resources to empower your success, fostering growth and resilience"
   }
 }
