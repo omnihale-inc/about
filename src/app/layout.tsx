@@ -9,7 +9,7 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Omnihale - About Omnihale, Company, Team & Product',
+  title: 'Omnihale - About Omnihale, Company, Founders & Product',
   description:
     'Unveil the forefront of human advancement. Dive into your favored groundbreaking company leading innovation and propelling the evolution of humanity',
   openGraph: {},
