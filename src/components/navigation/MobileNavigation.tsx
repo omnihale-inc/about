@@ -133,7 +133,7 @@ function Node(props: MobileNavigationProps) {
                     <ul className='ml-[38px] text-[16px] overflow-hidden'>
                       {[
                         { name: 'Overview', url: '/company/overview' },
-                        { name: 'People', url: '/company/team' },
+                        { name: 'Founders', url: '/company/founders' },
                         {
                           name: 'Contact Us',
                           url: 'mailto:contact@omnihale.com',

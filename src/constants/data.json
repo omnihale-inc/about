@@ -44,8 +44,8 @@
           },
           {
             "id": 321,
-            "href": "/company/team",
-            "text": "People"
+            "href": "/company/founders",
+            "text": "Founders"
           },
           {
             "id": 321,
@@ -98,10 +98,10 @@
       }
     ]
   },
-  "team": {
+  "founders": {
     "title": "The Founders",
     "description": "Pioneers of Omnihale Solutions for a Transformed Human Experience",
-    "teams": [
+    "foundersInfo": [
       {
         "id": 31,
         "username": "Mahmud Suberu",

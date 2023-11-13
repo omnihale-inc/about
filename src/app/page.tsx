@@ -3,7 +3,7 @@ import CtaParagraph from '@/components/Elements/CtaParagraph';
 import HeroDeskImage from '@/components/HeroDeskImage';
 import HeroMobImage from '@/components/HeroMobImage';
 import HeroText from '@/components/HeroText';
-import Team from '@/components/Team';
+import Founders from '@/components/Founders';
 import Values from '@/components/Values';
 import { withGreenButton } from '@/components/withButtonStyle';
 import data from '@/constants/data.json';
@@ -11,7 +11,6 @@ import data from '@/constants/data.json';
 export default function Home() {
   const { title, description, imageDesk, imageMob } = data.homepage.heroText;
   const GreenContactUsButton = withGreenButton(ContactUsButton);
-  const teamData = data.team;
   return (
     <>
       <main>
@@ -23,7 +22,7 @@ export default function Home() {
           <HeroMobImage imgSrc={imageMob} />
         </div>
         <Values />
-        <Team />
+        <Founders />
         <div className='max-w-6xl py-32 mx-auto px-4 flex flex-col items-center gap-9'>
           <CtaParagraph />
           <GreenContactUsButton />
