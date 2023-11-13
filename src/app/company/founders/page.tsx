@@ -1,4 +1,5 @@
 'use client';
+import { useRef, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
@@ -8,16 +9,8 @@ import HeroText from '@/components/HeroText';
 import UserTeam from '@/components/UserTeam';
 import { withGreenButton } from '@/components/withButtonStyle';
 import data from '@/constants/data.json';
-import {
-  LegacyRef,
-  MutableRefObject,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
 
-export default function Team() {
+export default function Founders() {
   const foundersData = data.founders;
   const GreenContactUsButton = withGreenButton(ContactUsButton);
   const mobileContainRef = useRef<HTMLDivElement | null>(null);
