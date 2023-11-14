@@ -96,7 +96,7 @@ function Node(props: MobileNavigationProps) {
       {/* renders the navigation items */}
       <ul className='text-white text-[20px] mt-[56px]'>
         {[
-          { name: 'About', url: '/' },
+          { name: 'Home', url: '/' },
           { name: 'Company', url: '#' },
           { name: 'Product', url: 'https://omnihale.com' },
         ].map((text) => {
