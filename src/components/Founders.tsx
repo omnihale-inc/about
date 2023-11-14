@@ -29,7 +29,7 @@ const Founders = () => {
           <h3 className='text-[32px] lg:text-[64px] text-[#247e5b] text-center'>
             Introducing Our Visionary Founders:
           </h3>
-          <p className='text-[20px] md:text-[24px] mt-[16px] text-center'>
+          <p className='text-[20px] md:text-[24px] mt-[16px] text-center mb-12'>
             Pioneers of Omnihale Solutions for a Transformed Human Experience
           </p>
         </div>
